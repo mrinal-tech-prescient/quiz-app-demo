@@ -1,4 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The user gets 10 questions to answer upon clicking the Start button when the quiz starts.
+At the end the user gets the percentage score that is scored by the user, the number of correct answers
+and incorrect answers selected by the user.
+
+The webapp works well with React-Redux and the link for the same in full executable repo is as in the repo:
+https://github.com/mrinal-tech-prescient/quiz-app-withoutts-withreact-redux
+
+However, incorporating the TypeScript, it needs to include Redux-Thunk to manage the dispatch actions after
+the API call. So though there is no Typescript error in the webapp, but the functionality needs to be built 
+after integrating with Redux-Thunk library.
 
 ## Available Scripts
 
