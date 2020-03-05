@@ -1,7 +1,4 @@
-interface SetQuestionActionType {
-    type: string,
-    payload: {questions :string, totalquestions: number, start: boolean}
-}
+import { SetQuestionActionType } from '../types'
 
 const setquestionsReducer = (state = {allquestions: [], started: false, totalquestions: 0}, action: SetQuestionActionType) => {
     switch (action.type) {

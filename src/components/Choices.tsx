@@ -4,32 +4,7 @@ import Form from 'react-bootstrap/Form'
 import {updateUserScoreAction} from '../actions/quizAction'
 import {connect} from 'react-redux';
 import { Dispatch } from 'redux';
-
-interface QuestionObject {
-    category: string,
-    type: string,
-    difficulty: string,
-    question: string,
-    correct_answer: string,
-    incorrect_answers: string[]
-}
-
-interface StateObj {
-    countOfQuestion: number,
-    usercorrect: number,
-    allquestions: QuestionObject[],
-    started: boolean,
-    totalquestions: number
-}
-
-interface ChoicesAsProps {
-        correct: string, 
-        incorrect: string[], 
-        usercorrect: number,
-        increaseUserMarks: (score: number)=>void;
-        // onClick: () => void;
-    
-}
+import { ChoicesAsProps, StateObj } from "../types";
 
 const Choices: React.FC<ChoicesAsProps> = (props) => {
     const [useranswer, setUseranswer] = useState('')

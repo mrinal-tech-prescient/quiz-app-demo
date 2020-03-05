@@ -4,36 +4,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 import {startQuizAction, fetchingAllQuestionsAction, fetchedAllQuestionsAction} from '../actions/startAction'
 import {getQuizQuestions} from '../apicall'
 import { Dispatch } from 'redux';
-
-interface StartProps {
-    dispatchStartAction: (start: boolean) => any;
-}
-
-interface QuestionObject {
-    category: string,
-    type: string,
-    difficulty: string,
-    question: string,
-    correct_answer: string,
-    incorrect_answers: string[]
-}
-
-interface StateObj {
-    countOfQuestion: number,
-    usercorrect: number,
-    allquestions: QuestionObject[],
-    started: boolean,
-    totalquestions: number
-}
-
-interface QuestionProps {
-        isQuizOn: number,
-        allQuestionsForQuiz: QuestionObject[],
-        totalQuestions: number,
-        count: number,
-        correctanswers: number,
-        dispatchNextQuestioAction: (number: number)=>void;
-}
+import { StartProps } from "../types";
 
 const Start: React.FC<StartProps> = (props) => {
 
@@ -84,7 +55,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
                     console.log("API call success : ", allquestions);
                     let total = allquestions.length;
                     allquestions.map((eachQuestion) => {
-                        let answer_options = eachQuestion.incorrect_answer
+                        let answer_options = eachQuestion.incorrect_answers
                         answer_options.push(eachQuestion.correct_answer)
                         let all_answers = shuffle(answer_options)
                         Object.assign({}, eachQuestion, 

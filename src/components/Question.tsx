@@ -3,32 +3,7 @@ import Choices from './Choices';
 import Next from './Next';
 import Start from './Start';
 import {connect} from 'react-redux';
-
-interface QuestionObject {
-    category: string,
-    type: string,
-    difficulty: string,
-    question: string,
-    correct_answer: string,
-    incorrect_answers: string[]
-}
-
-interface StateObj {
-    countOfQuestion: number,
-    usercorrect: number,
-    allquestions: QuestionObject[],
-    started: boolean,
-    totalquestions: number
-}
-
-interface QuestionProps {
-        isQuizOn?: number,
-        allQuestionsForQuiz?: QuestionObject[],
-        totalQuestions?: number,
-        count?: number,
-        correctanswers?: number,
-        //dispatchNextQuestionAction: (number: number)=>void;
-}
+import { StateObj, QuestionProps } from "../types";
 
 const Question: React.FC<QuestionProps> = (props) => {    
     return (

@@ -6,7 +6,6 @@ export const updateUserScoreAction = (old_score: number) => {
     }
 }
 
-
 export const nextQuestionAction = (arg: number) => {
     console.log("NEXT_QUESTION_TRACK")   
     return {

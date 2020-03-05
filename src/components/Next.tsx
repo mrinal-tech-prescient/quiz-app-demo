@@ -3,28 +3,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 import {connect} from 'react-redux';
 import { nextQuestionAction } from '../actions/quizAction'
 import { Dispatch } from 'redux';
-
-interface QuestionObject {
-    category: string,
-    type: string,
-    difficulty: string,
-    question: string,
-    correct_answer: string,
-    incorrect_answers: string[]
-}
-
-interface StateObj {
-    countOfQuestion: number,
-    usercorrect: number,
-    allquestions: QuestionObject[],
-    started: boolean,
-    totalquestions: number
-}
-
-interface NextAsProps {
-        count: number,
-        dispatchNextQuestionAction: (number: number)=>void;
-}
+import { StateObj, NextAsProps } from "../types";
 
 const Next: React.FC<NextAsProps> = (props) => {
 

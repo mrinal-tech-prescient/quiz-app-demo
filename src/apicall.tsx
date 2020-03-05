@@ -1,24 +1,5 @@
 import axios from 'axios';
-
-interface QuestionObject {
-    category: string,
-    type: string,
-    difficulty: string,
-    question: string,
-    correct_answer: string,
-    incorrect_answer: string[]
-}
-
-interface Questions {
-    response_code: number,
-    results: QuestionObject[]
-}
-
-interface APIResponse {
-    data: Questions,
-    status: number,
-    statusText: string,
-}
+import { APIResponse } from '../src/types'
 
 const targetURL = 'https://opentdb.com/api.php?amount=10'
 

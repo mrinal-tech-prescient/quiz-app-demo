@@ -1,7 +1,4 @@
-interface QuizActionType {
-    type: string,
-    payload: number
-}
+import { QuizActionType } from '../../src/types'
 
 const quizReducer = (state = { countOfQuestion: 1, usercorrect: 0 },action: QuizActionType) => {
     switch (action.type) {
